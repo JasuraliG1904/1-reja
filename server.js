@@ -1,9 +1,18 @@
 console.log("Web Serverni boshlash");
 const express = require("express");
-const app = express();
+const app = express(); // maqsadli obyekt
 const http = require("http")
+const fs = require("fs")
 
-
+let user;
+fs.readFile("database/user.json", "utf8", (err, data) => {
+    if (err) {
+        console.log("Error:", err);
+    }
+    else {
+        user = JSON.parse(data)
+    }
+})
 // 1
 app.use(express.static("public")); //clientlarga public folder ochiq degani
 app.use(express.json()); //json formatni object formatga otadi
@@ -15,6 +24,35 @@ app.use(express.urlencoded({ extended: true })); //html formdan express qabul qi
 app.set("views", "views");
 app.set("view engine", "ejs");
 
+
+app.get('/author', (req, res) => {
+    res.render("author", { user: user })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //4 Routing code
 // app.get("/", function (req, res) {
 //     res.end("Jasurbek")
@@ -23,14 +61,15 @@ app.set("view engine", "ejs");
 //     res.end("hello")
 // })
 
-app.post("/create-item", (req, res) => {
-    console.log(req.body);
-    res.json({ test: "succes" })
-})
+// app.post("/create-item", (req, res) => {
+//     console.log(req.body);
+//     res.json({ test: "succes" })
+// })
 
-app.get("/", function (req, res) {
-    res.render("harid")
-})
+// app.get("/", function (req, res) {
+//     res.render("harid")
+// })
+
 
 
 const server = http.createServer(app);
