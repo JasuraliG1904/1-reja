@@ -6,6 +6,7 @@
     flex-direction: row;
     justify-content: center;
     background: #e5e5e5;
+    margin-bottom: 3%;
 }
 
 .main_frame {
@@ -16,7 +17,6 @@
     flex-direction: row;
     align-items: center;
     margin-top: 2px;
-    background: #eec475;
 }
 
 .main_frame .left_frame {
@@ -28,37 +28,20 @@
     flex-direction: column;
 }
 
-.main_frame .midd_frame {
-    position: relative;
-    width: 970px;
-    height: 1259px;
-    margin-left: 30px;
-    margin-right: 27px;
-    display: flex;
-    flex-direction: column;
-}
 
-.main_frame .right_frame {
-    position: relative;
-    width: 180px;
-    height: 1315px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+/* ................................................*/
 
 .left_1 {
     position: relative;
     width: 228px;
     height: 267px;
     margin-top: 50px;
-    margin-left: 37px;
+    margin-left: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .left_1-1 {
@@ -107,13 +90,15 @@
     color: #767676;
 }
 
-.left_icons{
+/* ........................ */
+
+.left_icons {
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    width: 238px; 
+    justify-content: space-around;
+    width: 238px;
     margin-top: 19px;
 }
 
@@ -141,50 +126,290 @@
     margin-top: 5.86px;
 }
 
+/* ................................................ */
+
 
 
 .main_frame .left_2 {
     position: relative;
+    display: flex;
+    flex-direction: column;
     width: 221px;
     height: 126px;
-    margin-left: 44px;
-    background-color: aqua;
+    margin-left: 25px;
 }
+
+.left_2-1,
+.left_3-1,
+.left_4-1 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+/* .......................................................... */
+
 
 .main_frame .left_3 {
     position: relative;
     width: 220px;
     height: 153px;
-    margin-top: 25px;
-    margin-left: 45px;
-    background-color: aqua;
+   top: -30px;
+    left: 25px;
 }
+
+.left_3 p,
+.left_4 p,
+.left_5 p {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #f0f0f0;
+    /* Orqa fon (bo'sh qismi) */
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.progress {
+    height: 80%;
+    background-color: #ffc107;
+    /* Sariq foiz chizig'i */
+    border-radius: 10px;
+}
+
+
+/* ....................... */
 
 .main_frame .left_4 {
     position: relative;
     width: 220px;
     height: 252px;
-    margin-top: 25px;
-    margin-left: 45px;
-    background-color: aqua;
+   top: -30px;
+    left: 25px;
 }
 
 .main_frame .left_5 {
     position: relative;
     width: 186px;
     height: 148px;
-    margin-top: 25px;
-    margin-left: 45px;
-    background-color: aqua;
+    top: -30px;
+    left: 25px;
+}
+
+.left_5-1 span {
+    position: absolute;
+    left: 30px;
 }
 
 .main_frame .marginer {
-    position: relative;
     width: 228px;
     height: 0px;
-    margin-left: 48px;
+    margin-left: 25px;
     margin-bottom: 25px;
-    margin-top: 39px;
+    margin-top: 30px;
     /* Background */
     border: 1.5px solid #f0f0f6;
+}
+.extraBtn{
+    margin-bottom: -15px;
+}
+.btnDiv {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #FFB400;
+    justify-content: space-evenly;
+    width: 220px;
+    height: 40px;
+    left: 15px;
+    margin-bottom: 35px;
+    padding: 10px;
+}
+
+/*  */
+.main_frame .midd_frame {
+    position: relative;
+    width: 970px;
+    /* height: 1259px; */
+    margin-left: 30px;
+    margin-right: 27px;
+    margin-top: -955px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #fff; */
+}
+
+.midmainInfo {
+    position: relative;
+    display: flex;
+}
+
+.midmainInfo h1 {
+    position: relative;
+    width: 500;
+    height: 118px;
+    top: 35px;
+    opacity: 1;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 124%;
+    letter-spacing: 0%;
+    margin-left: 45px;
+}
+
+.midmainInfo p {
+    position: relative;
+    width: 424px;
+    height: 88px;
+    top: 30px;
+    left: 5px;
+    opacity: 1;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin-left: 45px;
+    opacity: 0.6;
+}
+
+.hireDiv {
+    position: relative;
+    background: #FFB400;
+    display: flex;
+    flex-direction: row;
+    margin-top: 70px;
+    width: 120px;
+    padding: 15px;
+    border-radius: 5px;
+    margin-left: 45px;
+    justify-content: space-around;
+}
+
+.hireDiv div {
+    font-size: 20px;
+}
+
+.hireDiv img {
+    margin-top: 5px;
+    width: 15px;
+    height: 15px;
+}
+
+.mid1-1 {
+    position: relative;
+    top: 15px;
+    left: 15px;
+}
+
+.mid2-1 {
+    position: relative;
+    top: 60px;
+    left: 525px;
+}
+
+.mid3 {
+    position: relative;
+    top: 70px;
+    left: 840px;
+}
+
+.mid2-2 {
+    position: relative;
+    top: 435px;
+    left: 40px;
+}
+
+.mid4 {
+    position: relative;
+    top: 345px;
+    left: 275px;
+}
+
+
+.mid1-2 {
+    position: relative;
+    top: 400px;
+    left: 460px;
+}
+
+.mid5 {
+    position: relative;
+    left: 775px;
+    top: 440px;
+}
+
+.midBottom {
+    position: relative;
+    top: 150px;
+    text-align: center;
+}
+.midP{
+    display: inline-block;
+    width: 435px;
+    opacity: 0.5;
+}
+
+/* midbottom */
+
+.mycontainer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.mycontainer .cards {
+   margin: 10px;
+}
+.mycontainer .cards div{
+    width: 310px;
+    height: 225px;
+    background: white;
+    margin-top: 20px;
+}
+.mycontainer .cards img{
+   margin-top: 25px;
+}
+
+.adv{
+    position: relative;
+    top: 25px;
+}
+.orderP{
+    position: relative;
+    top: -25px;
+    font-size: 15px;
+    color: #FFB400;
+}
+.orderP img{
+    position: relative;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+
+/* ........................... */
+
+.main_frame .right_frame {
+    position: relative;
+    width: 180px;
+    height: 1315px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.right_frame img{
+    margin: 15px;
 }
