@@ -77,3 +77,10 @@ async function run() {
   console.log(javob);
 }
 run();
+
+
+// task 1
+// function countLetter(letter, word){
+//   return word.split(letter).length - 1; 
+// }
+// console.log(countLetter("o", "boom"));
