@@ -1,4 +1,5 @@
 console.log("Web Serverni boshlash");
+const { log } = require("console");
 const express = require("express");
 const app = express(); // maqsadli obyekt
 const fs = require("fs")
@@ -15,7 +16,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 
 
 // Mongo Chaqirish
-const db =require("./server").db()
+const db = require("./server").db()
 
 
 // 1
@@ -36,20 +37,43 @@ app.set("view engine", "ejs");
 
 
 //4 Routing code
+
 // app.get("/", function (req, res) {
 //     res.end("Jasurbek")
 // })
+
 // app.get("/hello", function (req, res) {
 //     res.end("hello")
 // })
 
-// app.post("/create-item", (req, res) => {
-//     console.log(req.body);
-//     res.json({ test: "succes" })
-// })
+app.post("/create-item", (req, res) => {
+    console.log("user entered /create-item");
+    console.log(req.body);
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+        if (err) {
+            console.log(err);
+            res.end("something went wrong");
+        }
+        else {
+            res.end("Successfully");
+        }
+    })
+})
 
 app.get("/", function (req, res) {
-    res.render("rejalar")
+    console.log("user entered /");
+    db.collection("plans").find().toArray((err, data) => {
+        if (err) {
+            console.log(err);
+            res.end("something went wrong");
+        }
+        else {
+            console.log(data);
+            // res.render("rejalar")
+            res.render("rejalar", { items: data })
+        }
+    })
 })
 
 module.exports = app;
