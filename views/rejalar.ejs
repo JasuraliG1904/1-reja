@@ -14,11 +14,21 @@
         <div class="display-4 text-center py-1">Reja</div>
         <form id="create-form" action="/create-item" method="Post">
             <div class="d-flex align-items-center">
-                <input id="create-field" type="text" name="item">
-                <button class="btn btn-primary" style="border-radius: 20px">Yangi harid qurish</button>
+                <input 
+                id="create-field" 
+                name="item"
+                autofocus
+                autocomplete="off"
+                class="form-control mr-3"
+                type="text" 
+                style="flex: 1;"
+                >
+                <button class="btn btn-primary" style="border-radius: 20px">Yangi Rejalar Qo'shish</button>
             </div>
         </form>
+        <button id="clean-all" class="btn btn-danger" style="border-radius: 20px; margin-top: 20px;">Hamma Rejalarni O'chirish</button>
     </div>
+
 </body>
 
 </html>

@@ -30,29 +30,6 @@ app.get('/author', (req, res) => {
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //4 Routing code
 // app.get("/", function (req, res) {
 //     res.end("Jasurbek")
@@ -66,14 +43,14 @@ app.get('/author', (req, res) => {
 //     res.json({ test: "succes" })
 // })
 
-// app.get("/", function (req, res) {
-//     res.render("harid")
-// })
+app.get("/", function (req, res) {
+    res.render("rejalar")
+})
 
 
 
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
-    console.log(`Server is running: ${PORT}`);
+    console.log(`Server is running: ${PORT}, http://localhost:${PORT}`);
 });
