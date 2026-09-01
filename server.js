@@ -43,14 +43,14 @@ app.get('/author', (req, res) => {
 //     res.json({ test: "succes" })
 // })
 
-app.get("/", function (req, res) {
-    res.render("rejalar")
-})
+// app.get("/", function (req, res) {
+//     res.render("harid")
+// })
 
 
 
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
-    console.log(`Server is running: ${PORT}, http://localhost:${PORT}`);
+    console.log(`Server is running: ${PORT}`);
 });
