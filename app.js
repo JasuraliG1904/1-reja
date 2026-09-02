@@ -17,7 +17,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
 
 // Mongo Chaqirish
 const db = require("./server").db()
-
+const mongodb = require("mongodb")
 
 // 1
 app.use(express.static("public")); //clientlarga public folder ochiq degani
@@ -42,24 +42,30 @@ app.set("view engine", "ejs");
 //     res.end("Jasurbek")
 // })
 
-// app.get("/hello", function (req, res) {
-//     res.end("hello")
-// })
 
 app.post("/create-item", (req, res) => {
     console.log("user entered /create-item");
     console.log(req.body);
     const new_reja = req.body.reja;
     db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
-        if (err) {
-            console.log(err);
-            res.end("something went wrong");
-        }
-        else {
-            res.end("Successfully");
-        }
+        
+      res.json(data.ops[0]);
+        // if (err) {
+        //     console.log(err);
+        //     res.end("something went wrong");
+        // }
+        // else {
+        //     res.end("Successfully");
+        // }
     })
 })
+
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne({_id:new mongodb.ObjectId(id)}, function (err, data) {
+    res.json({state:"success"});
+  })
+});
 
 app.get("/", function (req, res) {
     console.log("user entered /");
