@@ -87,20 +87,41 @@
 
 // task b
 
-let count = 0;
+// let count = 0;
 
-function countDigits(parametr) {
-  let raqam = parametr.split(""); // 1talab ajratib oldim
-  console.log(raqam);
+// function countDigits(parametr) {
+//   let raqam = parametr.split(""); // 1talab ajratib oldim
+//   console.log(raqam);
 
-  for (let i = 0; i < raqam.length; i++) {
-    if (raqam[i] !== " " && raqam[i] >= 0 && raqam[i] <= 9) {
-      count++;
+//   for (let i = 0; i < raqam.length; i++) {
+//     if (raqam[i] !== " " && raqam[i] >= 0 && raqam[i] <= 9) {
+//       count++;
+//     }
+//   }
+//   console.log("Raqamlar soni:", count);
+// }
+// countDigits("1f5r66en");
+
+
+
+
+// task c
+
+function checkContent(a, b) {
+  for (let i = 0; i < a.length; i++) {
+    if (b.includes(a[i]) === false) {
+      return false;
     }
   }
-  console.log("Raqamlar soni:", count);
+  return true;
 }
-countDigits("1f5r66en");
+
+console.log(checkContent("mit", "tim"));
+console.log(checkContent("labador", "barlador"));
+console.log(checkContent("laba", "dora"));
+
+
+
 
 
 
