@@ -4,35 +4,32 @@ let createField = document.getElementById("create-field")
 console.log(createField.value);
 
 function itemTemplete(item) {
-    return `
-                <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
-                    <span class="item-text">
-                        ${item.reja}
-                    </span>
-                    <div>
-                        <button data-id="${item._id}" class="edit-me btn btn-secondary btn-sm mr-1">
-                            Ozgartirish
-                        </button>
-                        <button data-id="${item._id}" class="delete-me btn btn-danger btn-sm">Ochirish</button>
-                    </div>
-                </li>
-            `
+  return `
+            <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
+              <span class="item-text">${item.reja}</span>
+                <div>
+                  <button data-id="${item._id}" class="edit-me btn btn-secondary btn-sm mr-1">Ozgartirish</button>
+                  <button data-id="${item._id}" class="delete-me btn btn-danger btn-sm">Ochirish</button>
+                 </div>
+            </li>
+          `
 }
 
 document.getElementById("create-form").addEventListener("submit", function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    axios.post("/create-item", { reja: createField.value })
-        .then((response) => {
-            document.getElementById("item-list").insertAdjacentHTML("beforeend", itemTemplete(response.data));
-            createField.value="";
-            createField.focus();
-        })
-        .catch((err) => { 
-            console.log("Qayta urinib ko'ring");
-            
-        });
+  axios.post("/create-item", { reja: createField.value })
+    .then((response) => {
+      document.getElementById("item-list").insertAdjacentHTML("beforeend", itemTemplete(response.data));
+      createField.value = "";
+      createField.focus();
+    })
+    .catch((err) => {
+      console.log("Qayta urinib ko'ring");
+
+    });
 });
+
 document.addEventListener("click", function (e) {
   // delete oper
   console.log(e.target);
@@ -52,8 +49,28 @@ document.addEventListener("click", function (e) {
 
   // edit oper
   if (e.target.classList.contains("edit-me")) {
-    console.log("siz editni bosdiz");
-    
+    let userInput = prompt("O'zgartirish kiriting",
+      e.target.parentElement.parentElement.querySelector(".item-text").innerHTML);
+    if (userInput) {
+      axios.post("/edit-item",
+        {
+          id: e.target.getAttribute("data-id"),
+          new_input: userInput,
+        })
+        .then((response) => {
+          console.log(response);
+          e.target.parentElement.parentElement.querySelector(".item-text").innerHTML = userInput;
+        })
+        .catch((err)=>{
+          console.log("Iltimos qaytadan harakat qiling!");
+        })
+    }
   }
+});
 
+document.getElementById("clean-all").addEventListener("click", function () {
+  axios.post("/delete-all", { delete_all: true }).then((response) => {
+    alert(response.data.state);
+    document.location.reload();
+  });
 });

@@ -107,18 +107,73 @@
 
 // task c
 
-function checkContent(a, b) {
-  for (let i = 0; i < a.length; i++) {
-    if (b.includes(a[i]) === false) {
-      return false;
-    }
+// function checkContent(a, b) {
+//   for (let i = 0; i < a.length; i++) {
+//     if (b.includes(a[i]) === false) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(checkContent("mit", "tim"));
+// console.log(checkContent("labador", "barlador"));
+// console.log(checkContent("laba", "dora"));
+
+
+//  task d
+
+class Shop {
+  constructor(non, lagmon, cola) {
+    this.non = non;
+    this.lagmon = lagmon;
+    this.cola = cola;
   }
-  return true;
+
+  getTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    return `${hours}:${minutes}`;
+  }
+
+  qoldiq() {
+    const time = this.getTime();
+    const result = `Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`;
+    console.log(result);
+    return result;
+  }
+
+  // Mahsulot sotish 
+  sotish(mahsulot, miqdor) {
+    if (mahsulot === "non" && miqdor < this.non) {
+      this.non = this.non - miqdor;
+    }
+    else console.log(`Bizda faqat non bor va ${mahsulot} yoq`);
+    
+  }
+
+  // Mahsulot qabul qilish 
+  qabul(mahsulot, miqdor) {
+    if (mahsulot === "cola") {
+      this.cola = this.cola + miqdor;
+    }
+    else console.log(`Bizda faqat cola sotib olinadi ${mahsulot} kerak emas`);
+    
+  }
 }
 
-console.log(checkContent("mit", "tim"));
-console.log(checkContent("labador", "barlador"));
-console.log(checkContent("laba", "dora"));
+const shop = new Shop(4, 5, 2);
+// console.log(shop);
+
+shop.qoldiq();
+shop.sotish('olma', 2);
+shop.qabul('anor', 4);
+console.log("----------------");
+shop.qoldiq();
+
+
+
 
 
 
