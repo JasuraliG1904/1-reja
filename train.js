@@ -123,56 +123,60 @@
 
 //  task d
 
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.non = non;
-    this.lagmon = lagmon;
-    this.cola = cola;
-  }
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.non = non;
+//     this.lagmon = lagmon;
+//     this.cola = cola;
+//   }
 
-  getTime() {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    return `${hours}:${minutes}`;
-  }
+//   getTime() {
+//     const now = new Date();
+//     const hours = now.getHours();
+//     const minutes = now.getMinutes();
+//     return `${hours}:${minutes}`;
+//   }
 
-  qoldiq() {
-    const time = this.getTime();
-    const result = `Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`;
-    console.log(result);
-    return result;
-  }
+//   qoldiq() {
+//     const time = this.getTime();
+//     const result = `Hozir ${time}da ${this.non}ta non, ${this.lagmon}ta lagmon va ${this.cola}ta cola mavjud!`;
+//     console.log(result);
+//     return result;
+//   }
 
-  // Mahsulot sotish 
-  sotish(mahsulot, miqdor) {
-    if (mahsulot === "non" && miqdor < this.non) {
-      this.non = this.non - miqdor;
-    }
-    else console.log(`Bizda faqat non bor va ${mahsulot} yoq`);
-    
-  }
+//   // Mahsulot sotish 
+//   sotish(mahsulot, miqdor) {
+//     if (mahsulot === "non" && miqdor < this.non) {
+//       this.non = this.non - miqdor;
+//     }
+//     else console.log(`Bizda faqat non bor va ${mahsulot} yoq`);
 
-  // Mahsulot qabul qilish 
-  qabul(mahsulot, miqdor) {
-    if (mahsulot === "cola") {
-      this.cola = this.cola + miqdor;
-    }
-    else console.log(`Bizda faqat cola sotib olinadi ${mahsulot} kerak emas`);
-    
-  }
+//   }
+
+//   // Mahsulot qabul qilish 
+//   qabul(mahsulot, miqdor) {
+//     if (mahsulot === "cola") {
+//       this.cola = this.cola + miqdor;
+//     }
+//     else console.log(`Bizda faqat cola sotib olinadi ${mahsulot} kerak emas`);
+
+//   }
+// }
+
+// const shop = new Shop(4, 5, 2);
+// // console.log(shop);
+
+// shop.qoldiq();
+// shop.sotish('olma', 2);
+// shop.qabul('anor', 4);
+// console.log("----------------");
+// shop.qoldiq();
+
+// task e
+function myRevese(a) {
+  return a.split("").reverse().join("");
 }
-
-const shop = new Shop(4, 5, 2);
-// console.log(shop);
-
-shop.qoldiq();
-shop.sotish('olma', 2);
-shop.qabul('anor', 4);
-console.log("----------------");
-shop.qoldiq();
-
-
+console.log(myRevese("yes"));
 
 
 
