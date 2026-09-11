@@ -178,7 +178,17 @@ function myRevese(a) {
 }
 console.log(myRevese("yes"));
 
+/* web-fullstack, ai engenerinng, automation/testing, desktop/mobile apps, hackinda py kop ishalydi
+py back enddagi frameworklari django, fastApi
+2da comVision/NLP
+3da selenium
+4da kivi beeware
+ishlatishi sababi
+high-level, huge community, cross-platform, large ecosystem
+complied lan - biz yozgan kodlar faqat ozimiz oqiy olamiz
+interpreted lan  -mashina ham oqiy oladi 
 
+*/
 
 
 
