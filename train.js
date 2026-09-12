@@ -173,10 +173,10 @@
 // shop.qoldiq();
 
 // task e
-function myRevese(a) {
-  return a.split("").reverse().join("");
-}
-console.log(myRevese("yes"));
+// function myRevese(a) {
+//   return a.split("").reverse().join("");
+// }
+// console.log(myRevese("yes"));
 
 /* web-fullstack, ai engenerinng, automation/testing, desktop/mobile apps, hackinda py kop ishalydi
 py back enddagi frameworklari django, fastApi
@@ -190,8 +190,21 @@ interpreted lan  -mashina ham oqiy oladi
 
 */
 
+// task g
 
+function getHighestIndex(arr) {
+  let maxIndex = 0;
 
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > arr[maxIndex]) {
+      maxIndex = i;
+    }
+  }
+
+  return maxIndex;
+}
+
+console.log(getHighestIndex([5, 21, 12, 21, 8]));
 
 
 
