@@ -192,19 +192,33 @@ interpreted lan  -mashina ham oqiy oladi
 
 // task g
 
-function getHighestIndex(arr) {
-  let maxIndex = 0;
+// function getHighestIndex(arr) {
+//   let maxIndex = 0;
 
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > arr[maxIndex]) {
-      maxIndex = i;
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > arr[maxIndex]) {
+//       maxIndex = i;
+//     }
+//   }
+
+//   return maxIndex;
+// }
+
+// console.log(getHighestIndex([5, 21, 12, 21, 8]));
+
+function findDoublers(a) {
+  let result = a.split('');
+  for (let i = 0; i < result.length; i++) {
+    for (let j = i + 1; j < result.length; j++) {
+      if (result[i] === result[j]) {
+        return true
+      }
     }
   }
-
-  return maxIndex;
+  return false
 }
-
-console.log(getHighestIndex([5, 21, 12, 21, 8]));
-
+console.log(findDoublers("hello"));
+console.log(findDoublers("helol"));
+console.log(findDoublers("helo"));
 
 
