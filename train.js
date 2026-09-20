@@ -206,19 +206,50 @@ interpreted lan  -mashina ham oqiy oladi
 
 // console.log(getHighestIndex([5, 21, 12, 21, 8]));
 
-function findDoublers(a) {
+// function findDoublers(a) {
+//   let result = a.split('');
+//   for (let i = 0; i < result.length; i++) {
+//     for (let j = i + 1; j < result.length; j++) {
+//       if (result[i] === result[j]) {
+//         return true
+//       }
+//     }
+//   }
+//   return false
+// }
+// console.log(findDoublers("hello"));
+// console.log(findDoublers("helol"));
+// console.log(findDoublers("helo"));
+
+// k-task meniki
+function countVowels(a) {
   let result = a.split('');
-  for (let i = 0; i < result.length; i++) {
-    for (let j = i + 1; j < result.length; j++) {
-      if (result[i] === result[j]) {
-        return true
-      }
+  let count = 0;
+  for (let i = 0; i < a.length; i++) {
+    if (result[i] === 'a' || result[i] === 'e' || result[i] === 'i' || result[i] === 'o' || result[i] === 'u') {
+      count++
+      console.log(result[i]);
     }
   }
-  return false
+  console.log('unli harflar', count, 'ta');
 }
-console.log(findDoublers("hello"));
-console.log(findDoublers("helol"));
-console.log(findDoublers("helo"));
+countVowels('sotringu')
+
+console.log('-------------');
 
 
+// k task AI
+function countVowels2(str) {
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  let count = 0;
+
+  for (let char of str.toLowerCase()) { //----
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+
+console.log(countVowels2("sotringu"));
