@@ -222,34 +222,43 @@ interpreted lan  -mashina ham oqiy oladi
 // console.log(findDoublers("helo"));
 
 // k-task meniki
-function countVowels(a) {
-  let result = a.split('');
-  let count = 0;
-  for (let i = 0; i < a.length; i++) {
-    if (result[i] === 'a' || result[i] === 'e' || result[i] === 'i' || result[i] === 'o' || result[i] === 'u') {
-      count++
-      console.log(result[i]);
-    }
-  }
-  console.log('unli harflar', count, 'ta');
+// function countVowels(a) {
+//   let result = a.split('');
+//   let count = 0;
+//   for (let i = 0; i < a.length; i++) {
+//     if (result[i] === 'a' || result[i] === 'e' || result[i] === 'i' || result[i] === 'o' || result[i] === 'u') {
+//       count++
+//       console.log(result[i]);
+//     }
+//   }
+//   console.log('unli harflar', count, 'ta');
+// }
+// countVowels('sotringu')
+
+// console.log('-------------');
+
+
+// // k task AI
+// function countVowels2(str) {
+//   const vowels = ['a', 'e', 'i', 'o', 'u'];
+//   let count = 0;
+
+//   for (let char of str.toLowerCase()) { //----
+//     if (vowels.includes(char)) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+
+// console.log(countVowels2("sotringu"));
+
+function reverseSentence(str) {
+  return str
+    .split(' ')
+    .map(word => word.split('').reverse().join(''))
+    .join(' ');
 }
-countVowels('sotringu')
 
-console.log('-------------');
-
-
-// k task AI
-function countVowels2(str) {
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
-  let count = 0;
-
-  for (let char of str.toLowerCase()) { //----
-    if (vowels.includes(char)) {
-      count++;
-    }
-  }
-
-  return count;
-}
-
-console.log(countVowels2("sotringu"));
+console.log(reverseSentence("we like coding!"));
