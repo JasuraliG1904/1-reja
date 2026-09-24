@@ -254,11 +254,23 @@ interpreted lan  -mashina ham oqiy oladi
 
 // console.log(countVowels2("sotringu"));
 
-function reverseSentence(str) {
-  return str
-    .split(' ')
-    .map(word => word.split('').reverse().join(''))
-    .join(' ');
+// l task
+// function reverseSentence(str) {
+//   return str
+//     .split(' ')
+//     .map(word => word.split('').reverse().join(''))
+//     .join(' ');
+// }
+
+// console.log(reverseSentence("we like coding!"));
+
+// task M
+function getSquareNumbers(arr) {
+  return arr.map((num) => ({
+    number: num,
+    square: num * num
+  }));
 }
 
-console.log(reverseSentence("we like coding!"));
+console.log(getSquareNumbers([1, 2, 3]));
+
