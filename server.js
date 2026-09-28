@@ -2,7 +2,7 @@ const http = require("http")
 const mongodb = require("mongodb")
 
 let db;
-const connectionString = "mongodb+srv://Jasurali:Jasurali1904@cluster0.pylbcp1.mongodb.net/"
+const connectionString = "mongodb+srv://Jasurali:Jasurali1904@cluster0.pylbcp1.mongodb.net/NewReja"
 mongodb.connect(connectionString,
     {
         userNewUrlParser: true,
